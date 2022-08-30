@@ -17,9 +17,10 @@ function renderURLs() {
   let listItems = "";
   for (let i = 0; i < myURLs.length; i++) {
     // listItems += "<li> <a target='_blank' href=" + "https://" + myURLs[i] + ">" + myURLs[i] + "</a></li>";
+    // the below is cleaner:
     listItems += `
       <li> 
-        <a target='_blank' href='https://${myURLs[i]}'>  
+        <a target='_blank' href='${myURLs[i]}'>  
           ${myURLs[i]}
         </a>
       </li>
