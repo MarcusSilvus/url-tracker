@@ -14,8 +14,3 @@ inputBtn.addEventListener("click", function() {
     savedURLsEl.textContent = myURLs;
   }
 })
-
-
-
-
- 
