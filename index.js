@@ -4,9 +4,10 @@ let myURLs = [];
 
 const inputEl = document.getElementById("input-el");
 const inputBtn = document.getElementById("input-btn");
+const deleteBtn = document.getElementById("delete-btn");
 const ulEl = document.getElementById("ul-el");
 
-let urlFromLocalStorage = JSON.parse(localStorage.getItem("myURLs"));
+const urlFromLocalStorage = JSON.parse(localStorage.getItem("myURLs"));
 console.log(urlFromLocalStorage)
 
 if (urlFromLocalStorage) {
@@ -23,6 +24,12 @@ inputBtn.addEventListener("click", function() {
 
   renderURLs();
   console.log(localStorage.getItem("myURLs"))
+})
+
+deleteBtn.addEventListener("dblclick", function() {
+  localStorage.clear();
+  myURLs = [];
+  renderURLs();
 })
 
 function renderURLs() {

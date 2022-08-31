@@ -18,11 +18,19 @@ input {
 button {
   box-sizing: border-box;
   padding: 10px 20px;
-  background-color: #5f9341;
-  color: #fff;
   font-weight: bold;
   margin: 2px;
-  border: none;
+  border: solid 2px #5f9341;
+}
+
+#input-btn {
+  background-color: #5f9341;
+  color: #fff;
+}
+
+#delete-btn {
+  background-color: #fff; 
+  color: #5f9341;
 }
 
 ul {
