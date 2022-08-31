@@ -9,6 +9,11 @@ const ulEl = document.getElementById("ul-el");
 let urlFromLocalStorage = JSON.parse(localStorage.getItem("myURLs"));
 console.log(urlFromLocalStorage)
 
+if (urlFromLocalStorage) {
+  myURLs = urlFromLocalStorage;
+  renderURLs();
+}
+
 inputBtn.addEventListener("click", function() {
   myURLs.push(inputEl.value);
   console.log(myURLs)
