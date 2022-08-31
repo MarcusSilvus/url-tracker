@@ -6,11 +6,18 @@ const inputEl = document.getElementById("input-el");
 const inputBtn = document.getElementById("input-btn");
 const ulEl = document.getElementById("ul-el");
 
+let urlFromLocalStorage = JSON.parse(localStorage.getItem("myURLs"));
+console.log(urlFromLocalStorage)
+
 inputBtn.addEventListener("click", function() {
   myURLs.push(inputEl.value);
   console.log(myURLs)
   inputEl.value = "";
+
+  localStorage.setItem("myURLs", JSON.stringify(myURLs));
+
   renderURLs();
+  console.log(localStorage.getItem("myURLs"))
 })
 
 function renderURLs() {
