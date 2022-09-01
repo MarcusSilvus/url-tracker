@@ -8,10 +8,6 @@ const tabBtn = document.getElementById("tab-btn");
 const deleteBtn = document.getElementById("delete-btn");
 const ulEl = document.getElementById("ul-el");
 
-const tabs = [
-  {url: "https://www.google.com"}
-];
-
 const urlFromLocalStorage = JSON.parse(localStorage.getItem("myURLs"));
 console.log(urlFromLocalStorage);
 
@@ -22,12 +18,14 @@ if (urlFromLocalStorage) {
 
 tabBtn.addEventListener("click", function() {  
   // get url of current tab
-  
-  myURLs.push(tabs[0].url);
-  // save to local storage
-  localStorage.setItem("myURLs", JSON.stringify(myURLs));
-  // render 
-  render(myURLs);
+  chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+    myURLs.push(tabs[0].url);
+
+    // save to local storage
+    localStorage.setItem("myURLs", JSON.stringify(myURLs));
+    render(myURLs);
+    
+  })  
 })
 
 function render(urls) {
